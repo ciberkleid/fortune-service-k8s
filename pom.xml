@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.pivotal</groupId>
-  <artifactId>fortune-service</artifactId>
+  <artifactId>fortune-service-k8s</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>fortune-service</name>
+  <name>fortune-service-k8s</name>
   <description>Demo project for Spring Boot</description>
 
   <parent>
@@ -28,9 +28,16 @@
     <distribution.management.release.id>bintray</distribution.management.release.id>
     <distribution.management.release.url>https://api.bintray.com/maven/ciberkleid/maven-repo/fortune-service</distribution.management.release.url>
     <contracts.mode>REMOTE</contracts.mode>
+    <dekorate.version>0.7.5</dekorate.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>io.dekorate</groupId>
+      <artifactId>kubernetes-spring-starter</artifactId>
+      <version>${dekorate.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
