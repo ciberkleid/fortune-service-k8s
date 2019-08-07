@@ -2,3 +2,6 @@ spring:
   cloud:
     kubernetes:
       enabled: false
+  # Remember to revist profiles. Ideally we should set profile using env var
+  profiles:
+    active: kubernetes
