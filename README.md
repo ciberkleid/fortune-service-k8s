@@ -36,4 +36,8 @@ Run pack command from working directory of your project
 
 ```pack build fortune-service-k8s```
 
+Run ```kubectl get configmaps``` to ensure you have added the configmap for fortune-service-k8s-kubernetes.yml
+If not run ```kubectl create configmap fortune-service-k8s-kubernetes --from-file=../app-config-k8s/fortune-service-k8s-kubernetes.yml```
+Confirm it was created - ```kubectl get configmaps; kubectl describe configmap fortune-service-k8s-kubernetes```
+
 
