@@ -34,7 +34,13 @@ Set pack default builder
 
 Run pack command from working directory of your project
 
-```pack build fortune-service-k8s```
+```pack build fortune-service-k8s --env 'BP_JAVA_VERSION=8.*'```
+
+Try the image in local Docker and access the app using localhost:8080
+```docker images
+docker run -d -p 8080:8080 fortune-service-k8s
+docker ps
+```
 
 Run ```kubectl get configmaps``` to ensure you have added the configmap for fortune-service-k8s-kubernetes.yml
 If not run ```kubectl create configmap fortune-service-k8s-kubernetes --from-file=../app-config-k8s/fortune-service-k8s-kubernetes.yml```
