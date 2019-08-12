@@ -1,5 +1,6 @@
 package io.pivotal;
 
+import io.dekorate.kubernetes.annotation.KubernetesApplication;
 import io.pivotal.fortune.FortuneRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 //@EnableDiscoveryClient
 @EnableCircuitBreaker
+//@KubernetesApplication
 public class FortuneServiceApplication {
 
     Logger logger = LoggerFactory

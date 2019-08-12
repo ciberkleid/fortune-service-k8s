@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    kubernetes:
+      enabled: true
+
+eureka:
+  client:
+    enabled: false
+
+dekorate:
+  kubernetes:
+    livenessProbe:
+      httpActionPath: /actuator/health
+    readinessProbe:
+      httpActionPath: /actuator/health
+    serviceType: LoadBalancer
+    imagePullPolicy: Always
