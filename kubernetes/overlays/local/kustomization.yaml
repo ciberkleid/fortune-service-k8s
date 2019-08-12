@@ -1,0 +1,7 @@
+# name prefix should corresponse to the profile name as a convention
+namePrefix: local-
+commonLabels:
+  app.kubernetes.io/name: fortune-service
+resources:
+  - deployment.yaml
+  - service.yaml

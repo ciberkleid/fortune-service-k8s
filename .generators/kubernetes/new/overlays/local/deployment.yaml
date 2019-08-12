@@ -1,0 +1,28 @@
+---
+actions:
+  to: kubernetes/overlays/local/deployment.yaml
+---
+# Generated on {{now}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{artifactId}}
+spec:
+  selector:
+    matchLabels:
+      app: {{artifactId}}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{artifactId}}
+    spec:
+      containers:
+        - name: {{artifactId}}
+          image: lift/{{artifactId}}
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,39 @@
+---
+actions:
+  to: skaffold.yaml
+---
+apiVersion: skaffold/v1beta11
+kind: Config
+profiles:
+  - name: local
+    build:
+      artifacts:
+        - image: lift/{{artifactId}}
+          jibMaven:
+            module: ""
+            profile: "local"
+#          custom:
+#            buildCommand: ./pack-build.sh
+#            dependencies:
+#              paths:
+#                - src
+#              ignore:
+#                - src/out
+#                - src/build
+      tagPolicy:
+        sha256: {}
+      local:
+        push: false
+    deploy:
+      kubectl:
+        manifests:
+          - deployments/kubernetes/local/manifest.yaml
+#
+# Will be using k8s yaml files for services
+#
+  - name: local-services
+    deploy:
+      kubectl:
+        manifests:
+          - deployments/kubernetes/local-services/**/manifest.yaml
+
