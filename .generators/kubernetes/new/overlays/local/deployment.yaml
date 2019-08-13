@@ -23,6 +23,6 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: local
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080

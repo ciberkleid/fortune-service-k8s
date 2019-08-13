@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
         - name: fortune-service
-          image: lift/fortune-service
+          image: docker.io/ciberkleid/fortune-service
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: local
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080

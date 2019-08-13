@@ -4,10 +4,12 @@ profiles:
   - name: local
     build:
       artifacts:
-        - image: lift/fortune-service
+        - image: docker.io/ciberkleid/fortune-service
           jibMaven:
             module: ""
             profile: "local"
+            args:
+              - -DskipTests
 #          custom:
 #            buildCommand: ./pack-build.sh
 #            dependencies:
@@ -18,8 +20,6 @@ profiles:
 #                - src/build
       tagPolicy:
         sha256: {}
-      local:
-        push: false
     deploy:
       kubectl:
         manifests:

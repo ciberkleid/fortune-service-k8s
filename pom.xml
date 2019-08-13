@@ -242,21 +242,26 @@
                 <plugin>
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
-                    <version>1.0.0</version>
+                    <version>1.4.0</version>
                     <configuration>
                         <container>
                             <useCurrentTimestamp>true</useCurrentTimestamp>
                         </container>
                         <to>
-                            <image>lift/fortune-service</image>
+                            <image>docker.io/ciberkleid/fortune-service</image>
                             <tags>0.0.1-SNAPSHOT</tags>
+                          <auth>
+                            <username>ciberkleid</username>
+                            <password>Xf&amp;4METrjnW=gauN@KYk</password>
+                          </auth>
+
                         </to>
                     </configuration>
                     <executions>
                         <execution>
                             <phase>package</phase>
                             <goals>
-                                <goal>dockerBuild</goal>
+                                <goal>build</goal>
                             </goals>
                         </execution>
                     </executions>

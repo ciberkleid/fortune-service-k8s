@@ -6,7 +6,7 @@ metadata:
   labels:
     app: fortune-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 8080
       name: fortune-service

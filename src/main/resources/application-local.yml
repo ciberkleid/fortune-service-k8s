@@ -1,16 +1,41 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+#    exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+#    exclude: org.springframework.boot.autoconfigure.security.ManagementWebSecurityAutoConfiguration
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: false
+    discovery:
+      enabled: false
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    enabled: false
+
+hystrix:
+  stream:
+    queue:
+      enabled: false
+
 management:
+#  security:
+#    enabled: false
   endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
 
-spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-#  jpa:
-#    hibernate:
-#      ddl-auto: validate
-#    database: MYSQL
+jpa:
+  hibernate:
+    ddl-auto: validate
+#  database: MYSQL
 
 #logging:
 #  level:
