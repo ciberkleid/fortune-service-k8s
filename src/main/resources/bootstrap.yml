@@ -1,5 +1,7 @@
-server:
-  port: ${PORT:8787}
 spring:
   application:
     name: fortune-service
+
+# Use default port (8080) for deployments to cf and k8s
+# To change port for local testing, use run arguments. Example:
+#   mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8081
