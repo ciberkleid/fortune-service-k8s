@@ -9,6 +9,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 8080
+      targetPort: 8080
       name: fortune-service
   selector:
     app: fortune-service
